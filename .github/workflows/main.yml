@@ -62,11 +62,6 @@ jobs:
         run: |
           rm -rf dl build_dir staging_dir tmp .ccache
 
-      - name: Add Passwall feed
-        if: ${{ github.event.inputs.add_passwall == 'true' }}
-        run: |
-          echo "src-git base_passwall https://github.com/AW1Kdev/passwall.git" >> feeds.conf.default
-
       - name: Prepare feeds
         run: |
           ./scripts/feeds update -a
